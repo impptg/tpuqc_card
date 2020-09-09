@@ -37,31 +37,36 @@ def getpic(fn,str):
         if filename.endswith('.PNG') and filename != "db.png":
             os.rename(filename, fn)
 
-# getpic('id.png','2017213279')
-# getpic('name.png','王二麻子')
-# getpic('class.png','理学院')
-# getpic('number.png','477')
+getpic('id.png','2017211111')
+getpic('name.png','pptg')
+getpic('class.png','冷酸灵牙膏学院')
+getpic('number.png','09-099')
 
-img0 = Image.open('db.png')
+# img0 = Image.open('db.png')
+img0 = Image.open('db2.png')    # 新的橙色
 img1 = Image.open('id.png')
 img2 = Image.open('name.png')
 img3 = Image.open('class.png')
 img4 = Image.open('number.png')
 img5 = Image.open('head.png')
-img6 = img5.resize((250,340), Image.ANTIALIAS)
+w = 250
+h = 340
+img6 = img5.resize((w,h), Image.ANTIALIAS)
 
 
 opacity = 1
-for x in range(200, 450):
-  for y in range(400, 740):
+sx = 205
+sy = 390
+for x in range(sx, sx+w):
+  for y in range(sy, sy+h):
         p = img0.getpixel((x, y))
-        b = img6.getpixel((x-200,y-400))
+        b = img6.getpixel((x-sx,y-sy))
         p = [int(p[i]*(1-opacity) + b[i]*opacity) for i in range(3)]
         img0.putpixel((x, y), tuple(p))
 
 opacity = [0,0,0,1]
 sx = 760
-sy = 350
+sy = 330
 for x in range(sx,sx+570):
     for y in range(sy,sy+120):
         p = img0.getpixel((x, y))
@@ -71,7 +76,7 @@ for x in range(sx,sx+570):
 
 opacity = [0,0,0,1]
 sx = 760
-sy = 460
+sy = 420
 for x in range(sx,sx+570):
     for y in range(sy,sy+120):
         p = img0.getpixel((x, y))
@@ -81,7 +86,7 @@ for x in range(sx,sx+570):
 
 opacity = [0,0,0,1]
 sx = 760
-sy = 570
+sy = 530
 for x in range(sx,sx+570):
     for y in range(sy,sy+120):
         p = img0.getpixel((x, y))
@@ -91,7 +96,7 @@ for x in range(sx,sx+570):
 
 opacity = [0,0,0,1]
 sx = 760
-sy = 690
+sy = 650
 for x in range(sx,sx+570):
     for y in range(sy,sy+120):
         p = img0.getpixel((x, y))
